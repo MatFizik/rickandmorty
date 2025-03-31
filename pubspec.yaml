@@ -1,0 +1,46 @@
+name: rickandmorty
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  bloc: ^8.1.4
+  cached_network_image: ^3.2.0
+  convert: ^3.1.2
+  cupertino_icons: ^1.0.8
+  dio: ^5.7.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_svg: ^2.0.6
+  freezed_annotation: ^2.4.4
+  injectable: ^2.5.0
+  json_annotation: ^4.9.0
+  loader_overlay: ^4.0.4+1
+  logger: ^2.0.2+1
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.5.7
+  injectable_generator: ^2.0.0
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/4.0x/
+    - assets/images/3.0x/
+    - assets/images/2.0x/
+    - assets/images/1.5x/
+    - assets/images/
+    - assets/svgs/
+    - assets/
