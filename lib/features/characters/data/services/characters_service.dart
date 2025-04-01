@@ -16,8 +16,8 @@ class CharactersService {
     String? gender,
   ) async {
     try {
-      final response = await dio.get(
-        '/character',
+      final Response<dynamic> response = await dio.get(
+        'https://rickandmortyapi.com/api/character',
         queryParameters: {
           if (page != null) 'page': page,
           if (name != null) 'name': name,
@@ -29,8 +29,10 @@ class CharactersService {
       );
 
       return CharactersAllModel.fromJson(response.data);
+    } on DioException catch (e) {
+      throw e;
     } catch (e) {
-      throw Exception("Ошибка загрузки персонажей: $e");
+      throw e;
     }
   }
 
@@ -38,7 +40,8 @@ class CharactersService {
   Future<List<Character>> getMultipleCharacters(List<int> characters) async {
     try {
       final String ids = characters.join(',');
-      final response = await dio.get('/character/$ids');
+      final response =
+          await dio.get('https://rickandmortyapi.com/api/character/$ids');
 
       final dynamic data = response.data;
 
@@ -49,8 +52,10 @@ class CharactersService {
       } else {
         throw Exception("Неожиданный формат ответа");
       }
+    } on DioException catch (e) {
+      throw Exception(e);
     } catch (e) {
-      throw Exception("Ошибка загрузки персонажей: $e");
+      throw e;
     }
   }
 }

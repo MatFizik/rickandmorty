@@ -11,7 +11,7 @@ class EpisodesServices {
   Future<EpisodesAllModel> getEpisodes(int? page, String? name) async {
     try {
       final response = await dio.get(
-        '/episode',
+        'https://rickandmortyapi.com/api/episode',
         queryParameters: {
           if (page != null) 'page': page,
           if (name != null) 'name': name,
@@ -20,7 +20,7 @@ class EpisodesServices {
 
       return EpisodesAllModel.fromJson(response.data);
     } catch (e) {
-      throw Exception("Ошибка загрузки эпизодов: $e");
+      throw e;
     }
   }
 
@@ -28,7 +28,8 @@ class EpisodesServices {
   Future<List<Episode>> getFilteredEpisodes(List<int> episodes) async {
     try {
       final String ids = episodes.join(',');
-      final response = await dio.get('/episode/$ids');
+      final response =
+          await dio.get('https://rickandmortyapi.com/api/episode/$ids');
 
       final dynamic data = response.data;
 
@@ -40,7 +41,7 @@ class EpisodesServices {
         throw Exception("Неожиданный формат ответа");
       }
     } catch (e) {
-      throw Exception("Ошибка загрузки эпизодов: $e");
+      throw e;
     }
   }
 }
