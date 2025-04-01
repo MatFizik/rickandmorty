@@ -1,16 +1,15 @@
 # rickandmorty
 
-A new Flutter project.
+При разработке использовались данные из:
+https://rickandmortyapi.com
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Интерфейс разрабатывался на основе: 
+https://www.figma.com/design/bIOnWBadNKWwOFBWYEua7O/Rick-%26-Morty-(Copy)-(Copy)?m=auto&t=jvtOcovG3O9bTyMF-6
 
-A few resources to get you started if this is your first Flutter project:
+Разработаны страницы персонажей, эпизодов. В персонажах можно просмотреть эпизоды в которых он учавствует и наоборот.
+Так же работает поиск и разработан BottomSheet с фильтрацией для персонажей. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
